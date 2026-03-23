@@ -1,0 +1,23 @@
+export default async function Home() {
+  /*Récupère tous les posts (100) de l'API placeholder : */ 
+  // const resultat = await fetch("https://jsonplaceholder.typicode.com/posts/");
+
+  /*Récupère 1 seul post en particulier: */ 
+  const resultat = await fetch("https://jsonplaceholder.typicode.com/posts/1"); 
+
+  const post = await resultat.json(); /*Requète stockée temporairement*/
+  console.log(post); /*Résultat dans la console*/
+
+  return (
+    <div>
+      <h1>Post</h1>
+    </div>
+  );
+}
+
+/*Les champs exploitables sont les suivants :
+body
+id
+title
+user_Id
+*/
