@@ -8,12 +8,12 @@ type Post = {
 export default async function Posts() {
 
   // Avant : récupère le post original
-  const beforeResultat = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  const beforeResultat = await fetch("https://jsonplaceholder.typicode.com/posts/5");
   const beforeUpdate: Post = await beforeResultat.json();
   console.log(beforeUpdate);
 
   // Modification
-  const resultat = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  const resultat = await fetch("https://jsonplaceholder.typicode.com/posts/5", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default async function Posts() {
       <h3> Titre : {beforeUpdate.title}</h3>
       <p> Contenu : {beforeUpdate.body}</p>
       <p>Post #{beforeUpdate.id} — Auteur #{beforeUpdate.userId}</p><br></br>
-      
+
       <h2>Après modification :</h2>
       <h3>{post.title}</h3>
       <p>{post.body}</p>
